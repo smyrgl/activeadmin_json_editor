@@ -28,7 +28,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-define('ace/theme/jsoneditor', ['require', 'exports', 'module' , 'ace/lib/dom'], function(require, exports, module) {
+ace.define('ace/theme/jsoneditor', ['require', 'exports', 'module', 'ace/lib/dom'], function(acequire, exports, module) {
 
 exports.isDark = false;
 exports.cssClass = "ace-jsoneditor";
@@ -38,8 +38,9 @@ color: #333\
 }\
 \
 .ace-jsoneditor.ace_editor {\
-font-family: droid sans mono, monospace, courier new, courier, sans-serif;\
+font-family: droid sans mono, consolas, monospace, courier new, courier, sans-serif;\
 line-height: 1.3;\
+background-color: #fff;\
 }\
 .ace-jsoneditor .ace_print-margin {\
 width: 1px;\
@@ -62,7 +63,7 @@ border-left: 0px;\
 border-bottom: 1px solid #000000\
 }\
 .ace-jsoneditor .ace_marker-layer .ace_selection {\
-background: #D5DDF6\
+background: lightgray\
 }\
 .ace-jsoneditor.ace_multiselect .ace_selection.ace_start {\
 box-shadow: 0 0 3px 0px #FFFFFF;\
@@ -82,7 +83,7 @@ background: #FFFBD1\
 background-color : #dcdcdc\
 }\
 .ace-jsoneditor .ace_marker-layer .ace_selected-word {\
-border: 1px solid #D5DDF6\
+border: 1px solid lightgray\
 }\
 .ace-jsoneditor .ace_invisible {\
 color: #BFBFBF\
@@ -139,6 +140,6 @@ text-decoration: underline\
 background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==\") right repeat-y\
 }";
 
-var dom = require("../lib/dom");
+var dom = acequire("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
